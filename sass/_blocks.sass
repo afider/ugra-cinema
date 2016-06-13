@@ -1,0 +1,513 @@
+%bszbb
+	@include box-sizing(border-box)
+
+%section
+	width: 960px
+	margin: auto
+
+/* clearfix
+/* --------------------------------------------- */
+
+
+%clear
+	&:before,
+	&:after
+		display: table
+		content: ''
+		clear: both
+	&:after
+		clear: both
+
+.clearfix-block
+	clear: both
+	overflow: hidden
+	margin: 0
+	padding: 0
+	font-size: 0
+	line-height: 0
+
+.clearfix 
+	&:before,
+	&:after
+		display: table
+		content: ''
+		clear: both
+	&:after
+		clear: both
+
+
+/* clearfix
+/* ---------------------------------------END--- */
+
+%center
+	max-width: $page_w
+	margin: auto
+
+
+/* page
+/* --------------------------------------------- */
+
+.page
+	min-height: 100%
+	margin-bottom: -$footer_h
+	min-width: $page_w_max
+	position: relative
+	&:after
+		content: ''
+		display: block
+		height: $footer_h
+
+	&__header
+		
+
+	&__section
+		width: 960px
+		margin: auto
+
+		
+/* page
+/* ---------------------------------------END--- */
+
+
+/* wide-section
+/* --------------------------------------------- */
+
+.wide-section
+	background: $color_main
+
+	&__body
+		@extend %section
+		position: relative
+
+	&_top
+		height: 45px
+		line-height: 45px
+
+
+	&_footer
+		height: 118px
+		background: $color_main_light
+
+
+	&_footer-bottom
+		height: 50px
+		line-height: 50px
+
+
+
+/* wide-section
+/* ---------------------------------------END--- */
+
+
+/* footer
+/* --------------------------------------------- */
+
+.footer
+	min-width: $page_w_max
+	height: $footer_h
+	color: #fff
+	&__columns
+		display: table
+		width: 100%
+
+	&__columns-i
+		display: table-cell
+		width: 50%
+		vertical-align: middle
+
+		&_right
+			text-align: right
+
+		&_height_footer
+			height: 118px
+
+	a
+		+link-color ($color: #fff, $color_hover: $color_second, $color_visited: none)
+
+/* footer
+/* ---------------------------------------END--- */
+
+
+/* contacts
+/* --------------------------------------------- */
+
+.contacts
+	margin: 0
+	padding: 0
+	list-style-type: none
+	display: inline-block
+	
+	&__i
+		margin: 0
+		padding: 0
+
+	&__label
+		width: 60px
+		padding-right: 10px
+		display: inline-block
+		
+
+/* contacts
+/* ---------------------------------------END--- */
+
+
+/* counters
+/* --------------------------------------------- */
+
+.counters
+	display: inline-block
+	margin-right: 30px
+
+	&__i
+		display: inline-block
+
+	a
+		border-bottom: none
+		display: block
+
+	img
+		display: block
+
+/* counters
+/* ---------------------------------------END--- */
+
+
+/* small-partners
+/* --------------------------------------------- */
+
+.small-partners
+	&__i
+		display: inline-block
+		border-bottom: none
+		vertical-align: middle
+		margin-left: 10px
+
+/* small-partners
+/* ---------------------------------------END--- */
+
+
+/* txt-to-center
+/* --------------------------------------------- */
+
+.txt-to-center
+	text-align: center
+
+/* txt-to-center
+/* ---------------------------------------END--- */
+
+
+/* top-nav
+/* --------------------------------------------- */
+
+.top-nav
+	margin: 0
+	padding: 0
+	list-style-type: none
+	display: table
+	
+	&__i
+		margin: 0
+		padding: 0
+		display: table-cell
+
+	&__a
+		+link-color ($color: #fff, $color_hover: $color_second, $color_visited: none)
+		border-bottom: none
+		text-transform: uppercase
+		+rem(font-size, 11px)
+		display: block
+		height: 45px
+		line-height: 45px
+		&:before
+			content: '/'
+			display: inline-block
+			padding: 0 3px 0 7px
+
+	&__i:first-child &__a
+		&:before
+			display: none
+
+			
+	
+
+/* top-nav
+/* ---------------------------------------END--- */
+
+
+/* social-nav
+/* --------------------------------------------- */
+
+.social-nav
+	position: absolute
+	right: 0
+	top: 0
+	margin: 0
+	padding: 0
+	list-style-type: none
+	display: table
+
+	&__i
+		margin: 0
+		padding: 0 0 0 10px
+		display: table-cell
+	
+	&__i_vk &__a
+		width: image-width( sprite-path("vk")) 
+		&:before
+			+sprite-icon("vk")
+
+	&__i_instagram &__a
+		width: image-width( sprite-path("instagram")) 
+		&:before
+			+sprite-icon("instagram")
+
+	&__a
+		display: block
+		height: 45px
+		
+		line-height: 45px
+		position: relative
+		border-bottom: none
+		&:before
+			position: relative
+			content: ''
+			display: inline-block
+			vertical-align: middle
+			top: -1px
+
+
+
+/* social-nav
+/* ---------------------------------------END--- */
+
+
+/* header
+/* --------------------------------------------- */
+
+.header
+	margin-bottom: 20px
+	&__body
+		@extend %section
+		position: relative
+		height: 104px
+		//background: yellow
+
+	&__search-form
+		position: absolute
+		top: 25px
+		left: 300px
+
+/* header
+/* ---------------------------------------END--- */
+
+
+/* search-form
+/* --------------------------------------------- */
+
+.search-form
+	border-bottom: 1px solid #4a7899
+	@extend %clear
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 9px
+		right: 11px
+		+sprite-icon("search")
+		z-index: -1
+
+	&__input
+		border: none
+		height: 40px
+		width: 304px
+		//background: #8FA997
+		background: none
+		float: left
+		margin: 0
+		padding: 0 10px
+		outline: none
+	
+		
+	&__button
+		width: 40px
+		height: 40px
+		float: left
+		border: none
+		background-color: transparent
+		text-indent: -999px
+		display: block
+		visibility: visible
+		line-height: 40px
+		margin: 0
+		padding: 0
+		outline: none
+		
+
+/* search-form
+/* ---------------------------------------END--- */
+
+
+/* logo
+/* --------------------------------------------- */
+
+.logo
+	position: absolute
+	top: 25px
+	left: 0
+	+sprite-icon("logo")
+	display: block
+	border-bottom: none
+
+
+/* logo
+/* ---------------------------------------END--- */
+
+
+/* phones
+/* --------------------------------------------- */
+
+.phones
+	position: absolute
+	top: 26px
+	right: 0
+	line-height: 1.2
+	text-align: right
+	+rem(font-size, 16px)
+
+	&__h
+
+	&__num
+		+rem(font-size, 26px)
+
+	&__num-imp
+		font-weight: bold
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 14px
+		left: -30px
+		+sprite-icon("phone")
+		
+
+/* phones
+/* ---------------------------------------END--- */
+
+
+/* main-nav
+/* --------------------------------------------- */
+
+.main-nav
+	display: table
+	margin: 0
+	padding: 0
+	list-style-type: none
+	margin: auto
+	
+	&__i
+		display: table-cell
+		margin: 0
+		padding: 0
+		text-align: center
+	
+	&__i.is-active &__a
+		background: $color_bg
+		color: $color_main
+		
+	&__a
+		+link-color ($color: #fff, $color_hover: $color_second, $color_visited: none)
+		+rem(font-size, 13px)
+		font-weight: bold
+		text-transform: uppercase
+		height: 60px
+		line-height: 60px
+		padding: 0 15px
+		border-bottom: none
+		display: block
+
+
+
+/* main-nav
+/* ---------------------------------------END--- */
+
+
+/* input
+/* --------------------------------------------- */
+
+textarea.input
+	height: 80px
+	padding: 10px
+
+.input
+	width: 300px
+	height: 40px
+	background: #fff
+	color: $color_text
+	padding: 0 10px
+	+rem(font-size, 16px)
+	@extend %bszbb
+	+transition-property(box-shadow, border-color)
+	border: 2px solid $color_h
+	+transition-duration($animation-time)
+
+	&_w_fluid
+		width: 100%
+
+	&_error
+		border-color: $color_imp
+
+	&:focus
+		outline: 0 !important
+		+box-shadow(0 0 10px rgba($focus_color, 1))
+
+
+/* input
+/* ---------------------------------------END--- */
+
+
+
+/* button
+/* --------------------------------------------- */
+
+.button
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+	position: relative
+	display: inline-block
+	overflow: visible
+	border: none
+	color: $color_text !important
+	text-align: center
+	text-decoration: none
+	cursor: pointer
+	vertical-align: middle
+	outline: none
+	+rem(font-size, 22px)
+	text-transform: uppercase
+	padding: 5px 24px
+	white-space: nowrap
+	background-color: #fff
+	border: 2px solid $color_main
+	@extend %bszbb
+	border-radius: 2px
+	+transition-property(border-color, color)
+	+transition-duration($animation-time)
+	+transition-timing-function(ease-out)
+
+	&:hover
+		
+
+	&:active
+		+box-shadow(inset 0px 3px 7px rgba(#000, .2))
+	
+
+/* button
+/* ---------------------------------------END--- */
+
+
