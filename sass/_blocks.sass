@@ -511,3 +511,101 @@ textarea.input
 /* ---------------------------------------END--- */
 
 
+/* slider
+/* --------------------------------------------- */
+
+.slider
+	$slider_main_h: 420px
+	$slider_main_w: 1200px
+
+	width: $slider_main_w
+	height: $slider_main_h
+	margin-bottom: 30px
+	margin: auto
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0
+		padding: 0
+		position: relative
+
+	&__body
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 0
+		left: 0
+		margin: auto
+		z-index: 2
+
+
+	&__img
+		display: block
+		max-width: 100%
+		height: auto
+	
+	.bx-wrapper
+		position: relative
+
+	.bx-wrapper .bx-prev,
+	.bx-wrapper .bx-next
+		width: 100px
+		height: 140px
+		background: yellow
+		display: block
+		position: absolute
+		top: ($slider_main_h/2)
+		margin-top: -70px
+		overflow: hidden
+		text-indent: -999px
+
+	.bx-wrapper .bx-prev
+		left: 10px
+	.bx-wrapper .bx-next
+		right: 10px
+		
+	.bx-controls-direction
+		height: 0
+
+	.bx-wrapper .bx-controls
+		position: absolute
+		top: 0
+		right: 0
+		left: 0
+		z-index: 100
+		background: red
+		
+	.bx-wrapper .bx-pager
+		position: absolute
+		top: 30px
+		right: 30px
+		
+
+		.bx-pager-item
+			display: inline-block
+
+		.bx-pager-link
+			@extend %bszbb
+			display: inline-block
+			width: 8px
+			height: 8px
+			margin: 0 8px
+			border-radius: 50%
+			border: none
+			background: #bababb
+			+transition-property(background)
+			+transition-duration($animation-time)
+			overflow: hidden
+			text-indent: -999px
+
+		.active,
+		.bx-pager-link:hover
+			background: $color_second
+			
+
+/* slider
+/* ---------------------------------------END--- */
