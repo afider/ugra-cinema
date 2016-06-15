@@ -101,6 +101,11 @@ ol li
 
 +font-face( $family: "Open Sans Semibold", $file_name_r: "opensans-semibold")
 
++font-face( $family: "Open Sans Light", $file_name_r: "open_sans_condensed_light", $file_name_i: "opensans-condlightitalic")
++font-face( $family: "Open Sans Extrabold", $file_name_r: "opensans-extrabold", $file_name_i: "opensans-extrabolditalic")
+
++font-face( $family: "ALSRubl-Arial", $file_name_r: "alsrubl-arial-regular", $file_name_i: "alsrubl-arial-italic", $file_name_b: "alsrubl-arial-bold", $file_name_bi: "alsrubl-arial-bolditalic")
+
 %font-r
 	font-family: $font_main
 
@@ -112,6 +117,25 @@ ol li
 
 .font-sb
 	@extend %font-sb
+
+
+%font-light
+	font-family: 'Open Sans Light', $font_main
+
+.font-exbold
+	@extend %font-exbold
+
+%font-exbold
+	font-family: 'Open Sans Extrabold', $font_main
+
+.font-light
+	@extend %font-light
+
+%font-rubl
+	font-family: 'ALSRubl-Arial', $font_main
+
+.font-rubl
+	@extend %font-rubl
 
 
 /* fonts

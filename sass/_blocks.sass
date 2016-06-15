@@ -482,32 +482,146 @@ textarea.input
 	display: inline-block
 	overflow: visible
 	border: none
-	color: $color_text !important
+	color: #fff !important
 	text-align: center
 	text-decoration: none
 	cursor: pointer
 	vertical-align: middle
 	outline: none
-	+rem(font-size, 22px)
+	+rem(font-size, 15px)
+	letter-spacing: 1px
 	text-transform: uppercase
-	padding: 5px 24px
+	padding: 0 30px
+	height: 40px
+	line-height: 40px
 	white-space: nowrap
-	background-color: #fff
-	border: 2px solid $color_main
+	background-color: $color_main_light
+	border: none
 	@extend %bszbb
-	border-radius: 2px
-	+transition-property(border-color, color)
+	@extend %font-exbold
+	//border-radius: 2px
+	+transition-property(background-color)
 	+transition-duration($animation-time)
 	+transition-timing-function(ease-out)
 
 	&:hover
-		
+		background-color: lighten($color_main_light, 20)
 
 	&:active
-		+box-shadow(inset 0px 3px 7px rgba(#000, .2))
-	
+		line-height: 42px
+		+box-shadow(inset 0px 3px 7px rgba(#000, .5))
+
+	&_w_fluid
+		display: block
+
+	&_color_second
+		background-color: $color_second
+		color: $color_main !important
+		&:hover
+			background-color: lighten($color_second, 20)
 
 /* button
+/* ---------------------------------------END--- */
+
+
+/* schedule
+/* --------------------------------------------- */
+
+.schedule
+	$schedule-border_w: 5px
+	width: 270px
+	box-sizing: border-box
+	padding: 20px 20px 30px 20px
+	position: absolute
+	top: 0
+	right: 120px
+	color: #fff
+	+rem(font-size, 15px)
+	@extend %font-sb
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		left: $schedule-border_w
+		bottom: 0
+		right: $schedule-border_w
+		background: #000
+		z-index: -1
+		opacity: 0.8
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		bottom: - image-height( sprite-path("schedule-footer"))
+		left: 0
+		+sprite-icon("schedule-footer")
+
+	&__trans-border
+		position: absolute
+		z-index: 100
+		background: #fff
+		opacity: 0.3
+
+		&_left
+			left: 0
+		&_right
+			right: 0
+
+		&_left,
+		&_right
+			top: 0
+			bottom: 0
+			width: $schedule-border_w
+
+	&__i
+		padding: 16px 0
+		border-bottom: 1px dashed #fff
+
+		&_no-border
+			border-bottom: none
+
+	&__h
+		margin-bottom: 6px
+
+	&__legend
+		position: relative
+		+rem(font-size, 17px)
+		font-weight: bold
+
+		&_time
+			padding-left: 46px
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				top: 3px
+				left: 10px
+				+sprite-icon("time_white")
+
+		&_price
+			padding-left: 46px
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				top: 1px
+				left: 10px
+				+sprite-icon("price_white")
+
+	&__sep
+		@extend %font-light
+		font-weight: normal
+		margin: 0 3px
+	
+	&__rubl
+		font-weight: normal
+		@extend %font-rubl
+		
+		
+
+/* schedule
 /* ---------------------------------------END--- */
 
 
@@ -517,11 +631,14 @@ textarea.input
 .slider
 	$slider_main_h: 420px
 	$slider_main_w: 1200px
-
+	$trans-border_w: 5px
+	
+	position: relative
 	width: $slider_main_w
 	height: $slider_main_h
-	margin-bottom: 30px
 	margin: auto
+	margin-bottom: 30px
+	overflow: hidden
 
 	&__lst
 		margin: 0
@@ -547,26 +664,104 @@ textarea.input
 		display: block
 		max-width: 100%
 		height: auto
+
+	&__message
+		position: absolute
+		bottom: 60px
+		left: 130px
+		line-height: 1.1
+
+	&__message-h
+		text-transform: uppercase
+		font-weight: bold
+		color: $color_second
+		+rem(font-size, 28px)
+		text-shadow: 0 0 5px #000
+		margin-bottom: 10px
+
+	&__message-legend
+		color: #fff
+		text-shadow: 0 0 3px #000
+
+	&__trans-border
+		position: absolute
+		z-index: 100
+		background: #fff
+		opacity: 0.3
+
+		&_left
+			left: 0
+		&_right
+			right: 0
+
+		&_left,
+		&_right
+			top: 0
+			bottom: 0
+			width: $trans-border_w
+
+		&_top-left,
+		&_top-right,
+		&_bottom
+			height: $trans-border_w
+
+		&_top-left,
+		&_top-right
+			top: 0
+
+		&_top-left
+			width: 805px
+			//background: red
+			left: $trans-border_w
+
+		&_top-right
+			width: 115px
+			//background: yellow
+			right: $trans-border_w
+
+		&_bottom
+			bottom: 0
+			right: $trans-border_w
+			left: $trans-border_w
+
 	
 	.bx-wrapper
 		position: relative
 
 	.bx-wrapper .bx-prev,
 	.bx-wrapper .bx-next
-		width: 100px
-		height: 140px
-		background: yellow
+		width: 122px
+		height: $slider_main_h
+		//background: yellow
 		display: block
 		position: absolute
-		top: ($slider_main_h/2)
-		margin-top: -70px
+		top: 0
 		overflow: hidden
 		text-indent: -999px
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
 
 	.bx-wrapper .bx-prev
-		left: 10px
+		left: 0
+		&:before
+			+sprite-icon("arrow-left_disabled")
+			margin-left: - image-width( sprite-path("arrow-left")) /2
+		&:hover
+			&:before
+				+sprite-icon("arrow-left")
+
 	.bx-wrapper .bx-next
-		right: 10px
+		right: 0
+		&:before
+			+sprite-icon("arrow-right_disabled")
+			margin-left: - image-width( sprite-path("arrow-right")) /2
+		&:hover
+			&:before
+				+sprite-icon("arrow-right")
 		
 	.bx-controls-direction
 		height: 0
@@ -581,8 +776,8 @@ textarea.input
 		
 	.bx-wrapper .bx-pager
 		position: absolute
-		top: 30px
-		right: 30px
+		top: 338px
+		right: 220px
 		
 
 		.bx-pager-item
