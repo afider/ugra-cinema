@@ -15,6 +15,35 @@ $(function() {
 
 	});
 
+	$('.js-slider_movies').bxSlider({
+		mode: 'horizontal',
+		minSlides: 1,
+		maxSlides: 1,
+		slideMargin: 0,
+		auto: true,
+		pause: 5000,
+		speed: 1000,
+		autoHover: true,
+		pager: false
+	});
+
+	$('.js-slider_several-items').bxSlider({
+		mode: 'horizontal',
+		minSlides: 3,
+		maxSlides: 3,
+		slideMargin: 0,
+		auto: true,
+		pause: 5000,
+		speed: 1000,
+		autoHover: true,
+		slideWidth: 270,
+		slideHeight: 70,
+		slideMargin: 0,
+		nextSelector: '.slider__next',
+  		prevSelector: '.slider__prev',
+  		infiniteLoop: true
+	});
+
 });
 
 
