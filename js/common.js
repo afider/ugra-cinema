@@ -50,12 +50,12 @@ $(function() {
 	});
 
 	$('.js-slider_movies').bxSlider({
-		mode: 'horizontal',
+		mode: 'fade',
 		minSlides: 1,
 		maxSlides: 1,
 		slideMargin: 0,
 		auto: true,
-		pause: 5000,
+		pause: 50000,
 		speed: 1000,
 		autoHover: true,
 		pager: false
