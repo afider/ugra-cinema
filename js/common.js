@@ -1,3 +1,37 @@
+/*!
+ * Simple jQuery Equal Heights
+ *
+ * Copyright (c) 2013 Matt Banks
+ * Dual licensed under the MIT and GPL licenses.
+ * Uses the same license as jQuery, see:
+ * http://docs.jquery.com/License
+ *
+ * @version 1.5.1
+ */
+(function($) {
+
+    $.fn.equalHeights = function() {
+        var maxHeight = 0,
+            $this = $(this);
+
+        $this.each( function() {
+            var height = $(this).innerHeight();
+
+            if ( height > maxHeight ) { maxHeight = height; }
+        });
+
+        return $this.css('height', maxHeight);
+    };
+
+    // auto-initialize plugin
+    $('[data-equal]').each(function(){
+        var $this = $(this),
+            target = $this.data('equal');
+        $this.find(target).equalHeights();
+    });
+
+})(jQuery);
+
 
 $(function() {
 
@@ -38,46 +72,29 @@ $(function() {
 		autoHover: true,
 		slideWidth: 270,
 		slideHeight: 70,
-		slideMargin: 0,
 		nextSelector: '.slider__next',
   		prevSelector: '.slider__prev',
   		infiniteLoop: true
 	});
 
+
+	setEqualHeight();
+
 });
 
 
 
-function goToElement () {
+function setEqualHeight() {
 
-	var animationAllow = 'is-animate';
-	var openState = 'is-open';
-	var nav = $('.js-nav');
-	var navControl = $('.js-nav__control');
-	var navPhone = $('.js-nav__phone');
-	var navH = 40;
+	var container = '.js-equal-height__container';
+	var items = '.js-equal-height__item';
 
-	$(".js-goto").click(function(e) {
+		$(container).each(function() {
+		
+		$(this).find(items).equalHeights();
 
-		nav.removeClass(animationAllow + ' ' + openState);
-		navControl.removeClass(animationAllow + ' ' + openState);
-		navPhone.removeClass(openState);
-		$('body').removeClass(openState);
-
-		var self = $(this),
-			targetClass = self.data('goto');
-		    target = $(targetClass);
-
-		var speed = 1000;
-
-		 e.preventDefault();
-
-
-	    $('html, body').stop().animate({
-	        scrollTop: target.offset().top - (navH + 10)
-	        
-	    }, speed, 'easeInOutCubic');
 	});
 
-} // goToElement
+
+} // setEqualHeight
 
