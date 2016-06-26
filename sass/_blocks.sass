@@ -80,7 +80,6 @@
 		float: left
 		padding-left: 40px
 		+box-sizing(border-box)
-		padding-top: 58px
 
 		
 /* page
@@ -1377,6 +1376,7 @@ textarea.input
 	&__a
 		display: inline-block
 		border-bottom: none
+		+link-color ($color_visited: none)
 
 	&__icon
 		display: inline-block
@@ -1427,6 +1427,7 @@ textarea.input
 	line-height: 1.2
 	color: $color_main_txt
 	margin-bottom: 35px
+	padding-top: 58px
 
 	&__h
 		text-transform: uppercase
@@ -1697,9 +1698,151 @@ textarea.input
 		+rem(font-size, 10px)
 		text-align: center
 
+/* tabs
+/* ---------------------------------------END--- */
+
+
+/* content-img
+/* --------------------------------------------- */
+
+.content-img
+	display: block
+	margin-bottom: $content_bot_space
+
+/* content-img
+/* ---------------------------------------END--- */
+
+
+/* separator
+/* --------------------------------------------- */
+
+.separator
+	border-bottom: 1px dashed #236b98
+	margin-top: $content_bot_space
+	margin-bottom: $content_bot_space
+
+/* separator
+/* ---------------------------------------END--- */
+
+
+/* table
+/* --------------------------------------------- */
+
+.table 
+	width: 100%
+	margin-bottom: $content_bot_space
+	color: $color_main_light
+	text-transform: uppercase
+	line-height: 1.2
+
+	&__h td,
+	th,
+	thead th
+		background: #2270a1
+		text-transform: uppercase
+		font-weight: bold
+		color: #fff
+		text-align: left
+
+	& th,
+	& td
+		vertical-align: middle
+		padding: 20px
+
+	& tr:nth-child(even)
+		background: #6ec2f6
+
 	
 
+/* table
+/* ---------------------------------------END--- */
 
 
-/* tabs
+/* download
+/* --------------------------------------------- */
+
+.download
+	color: $color_main_light
+	+rem(font-size, 16px)
+	font-weight: bold
+	border-bottom: none
+	display: inline-block
+	padding: 8px 0 8px 55px
+	position: relative
+	margin-bottom: 14px
+
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		
+	&_png
+		&:after
+			+sprite-icon("png")
+
+	&_jpg
+		&:after
+			+sprite-icon("jpg")
+
+	&_xls
+		&:after
+			+sprite-icon("xls")
+
+	&_rar
+		&:after
+			+sprite-icon("rar")
+
+	&_doc
+		&:after
+			+sprite-icon("doc")
+
+		
+	&__size
+		font-weight: normal
+		+rem(font-size, 13px)
+		@extend %font-light
+		padding-left: 10px
+
+/* download
+/* ---------------------------------------END--- */
+
+
+/* sidebar-nav
+/* --------------------------------------------- */
+
+.sidebar-nav
+	@extend %font-sb
+	line-height: 1.2
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0 0 1px 0
+		padding: 0
+		display: block
+
+	& &__a
+		display: block
+		border-bottom: none
+		background: #2270a1
+		color: #fff
+		padding: 15px 20px
+		+transition-property(background)
+		+transition-duration($animation-time)
+		+transition-timing-function(ease-out)
+		+link-color ($color: #fff, $color_hover: #000, $color_visited: none)
+		&:hover
+			background: $color_second
+	
+	&__i.is-active &__a
+		background: none
+		color: $color_main_light
+
+
+/* sidebar-nav
 /* ---------------------------------------END--- */
