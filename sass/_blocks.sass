@@ -63,6 +63,23 @@
 	&__section
 		width: 960px
 		margin: auto
+		&:before,
+		&:after
+			content: ''
+			display: table
+		
+		&:after
+			clear: both
+		
+	&__mainbar
+		width: 680px
+		float: left
+
+	&__sidebar
+		width: 280px
+		float: left
+		padding-left: 40px
+		+box-sizing(border-box)
 
 		
 /* page
