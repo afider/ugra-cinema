@@ -424,11 +424,11 @@ p {
 }
 
 ul {
-  margin: 0 0 25px -20px;
+  margin: 0 0 25px -5px;
 }
 
 ol {
-  margin: 0 0 25px -20px;
+  margin: 0 0 25px -5px;
 }
 
 ul li,
@@ -488,8 +488,26 @@ h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 /* ---------------------------------------END--- */
 /* h */
 /* --------------------------------------------- */
+.h {
+  position: relative;
+}
 .h_color_main {
   color: #15385e;
+}
+.h_bordered {
+  text-align: center;
+  padding-bottom: 13px;
+}
+.h_bordered:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 90px;
+  left: 50%;
+  margin-left: -45px;
+  height: 1px;
+  background: #15385e;
 }
 
 /* h */
@@ -1194,7 +1212,7 @@ textarea.input {
   width: 100%;
 }
 .input_error {
-  border-color: #ff684a;
+  border-color: #e31e24;
 }
 .input:focus {
   outline: 0 !important;
@@ -2153,6 +2171,9 @@ textarea.input {
   font-size: 12px;
   font-size: 1.2rem;
   margin-bottom: 20px;
+  width: 960px;
+  margin: auto;
+  margin-bottom: 20px;
 }
 .breadcrumbs__lst {
   margin: 0;
@@ -2301,6 +2322,9 @@ textarea.input {
   padding: 0;
   display: table;
   border-bottom: 1px dashed #0d2238;
+}
+.teasers__i:first-child {
+  margin-top: 0;
 }
 .teasers__poster, .teasers__body {
   display: table-cell;
@@ -2689,4 +2713,32 @@ textarea.input {
 }
 
 /* sidebar-nav */
+/* ---------------------------------------END--- */
+/* banner */
+/* --------------------------------------------- */
+.banner {
+  display: block;
+  border-bottom: none;
+  margin: auto;
+  margin-bottom: 30px;
+  width: 1200px;
+}
+.banner__img {
+  display: block;
+}
+
+/* banner */
+/* ---------------------------------------END--- */
+/* important */
+/* --------------------------------------------- */
+.important {
+  color: #e31e24;
+  font-size: 32px;
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* important */
 /* ---------------------------------------END--- */

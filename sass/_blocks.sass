@@ -1355,6 +1355,9 @@ textarea.input
 .breadcrumbs
 	+rem(font-size, 12px)
 	margin-bottom: 20px
+	width: 960px
+	margin: auto
+	margin-bottom: 20px
 
 	&__lst
 		margin: 0
@@ -1501,6 +1504,8 @@ textarea.input
 		padding: 0
 		display: table
 		border-bottom: 1px dashed $color_main
+		&:first-child
+			margin-top: 0
 	
 	&__poster,
 	&__body
@@ -1845,4 +1850,35 @@ textarea.input
 
 
 /* sidebar-nav
+/* ---------------------------------------END--- */
+
+
+/* banner
+/* --------------------------------------------- */
+
+.banner
+	display: block
+	border-bottom: none
+	margin: auto
+	margin-bottom: 30px
+	width: 1200px
+
+	&__img
+		display: block
+
+/* banner
+/* ---------------------------------------END--- */
+
+
+/* important
+/* --------------------------------------------- */
+
+.important
+	color: $color_imp
+	+rem(font-size, 32px)
+	text-transform: uppercase
+	font-weight: bold
+	line-height: 1.2
+
+/* important
 /* ---------------------------------------END--- */

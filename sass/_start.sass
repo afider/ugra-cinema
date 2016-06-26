@@ -20,10 +20,10 @@ p
 	margin: 0 0 $content_bot_space 0
 
 ul
-	margin: 0 0 $content_bot_space -20px
+	margin: 0 0 $content_bot_space -5px
 
 ol
-	margin: 0 0 $content_bot_space -20px
+	margin: 0 0 $content_bot_space -5px
 
 ul li,
 ol li
@@ -84,8 +84,24 @@ ol li
 /* --------------------------------------------- */
 
 .h
+	position: relative
 	&_color_main
 		color: $color_main_light
+
+	&_bordered
+		text-align: center
+		padding-bottom: 13px
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			bottom: 0
+			width: 90px
+			left: 50%
+			margin-left: -45px
+			height: 1px
+			background: $color_main_light
+
 
 /* h
 /* ---------------------------------------END--- */
