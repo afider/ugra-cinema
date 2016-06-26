@@ -80,6 +80,7 @@
 		float: left
 		padding-left: 40px
 		+box-sizing(border-box)
+		padding-top: 58px
 
 		
 /* page
@@ -541,6 +542,55 @@ textarea.input
 /* ---------------------------------------END--- */
 
 
+/* info-button
+/* --------------------------------------------- */
+
+.info-button
+	line-height: 1.2
+	margin-bottom: 10px
+	+rem(font-size, 13px)
+	text-transform: uppercase
+	position: relative
+	background: $color_second
+	border: none
+	display: block
+	@extend %font-sb
+	padding: 17px 10px 17px 47px
+	+transition-property(background-color)
+	+transition-duration($animation-time)
+	+transition-timing-function(ease-out)
+	&:hover
+		background-color: lighten($color_second, 20)
+	
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		left: 15px
+		top: 50%
+
+	&_rules
+		&:after
+			+sprite-icon("rules")
+			margin-top: - image-height( sprite-path("rules")) /2
+
+	&_buy
+		&:after
+			+sprite-icon("buy")
+			margin-top: - image-height( sprite-path("buy")) /2
+
+	&_review
+		&:after
+			+sprite-icon("review")
+			margin-top: - image-height( sprite-path("review")) /2
+
+			
+		
+
+/* info-button
+/* ---------------------------------------END--- */
+
+
 /* schedule
 /* --------------------------------------------- */
 
@@ -601,6 +651,7 @@ textarea.input
 /* --------------------------------------------- */
 
 .schedule-inf
+	line-height: 1.5
 	&_layout_bottom
 		position: absolute
 		bottom: 0
@@ -616,6 +667,7 @@ textarea.input
 
 	&__i
 		padding-bottom: 10px
+		position: relative
 
 	&_space-bottom_none	&__i
 		&:last-child
@@ -677,6 +729,22 @@ textarea.input
 		font-weight: normal
 		@extend %font-rubl
 
+	&__tip
+		display: inline-block
+		position: relative
+		margin-left: 25px
+		
+	&__tip-body
+		position: absolute
+		top: 50%
+		transform: translate(0, -50%)
+		left: 0
+		font-style: italic
+		+rem(font-size, 12px)
+		width: 170px
+		font-weight: normal
+		line-height: 1.2
+
 /* schedule-inf
 /* ---------------------------------------END--- */
 
@@ -688,10 +756,13 @@ textarea.input
 	+rem(font-size, 12px)
 	display: table
 	width: 100%
+		
 	&_text-color_main
 		color: $color_main_txt
 	&_text-color_white
 		color: #fff
+	&_space_bottom
+		margin-bottom: 30px
 
 	&__column
 		display: table-cell
@@ -702,6 +773,11 @@ textarea.input
 			padding-right: 14px
 
 		&_description
+
+	&_size_big &__column
+		&_poster
+			width: 230px !important
+			padding-right: 20px
 			
 	&__description-h
 		+rem(font-size, 16px)
@@ -711,9 +787,12 @@ textarea.input
 
 	&_text-color_white &__description-h
 		border-bottom-color: #fff
+	
+	&_shadow-color_main &__shadow
+		+box-shadow(inset 0px 0px 0px 5px rgba($color_main_shadow, .5))
 
 	&__shadow
-		+box-shadow(inset 0px 0px 0px 5px rgba(0, 0, 0, .3))
+		+box-shadow(inset 0px 0px 0px 5px rgba(#000, .3))
 		display: block
 		border-bottom: none
 		position: relative
@@ -728,7 +807,7 @@ textarea.input
 			left: 0
 			right: 0
 			bottom: 0
-			background: rgba(0, 0, 0, .7)
+			background: rgba(#000, .7)
 			opacity: 0
 			+transition-property(opacity)
 			+transition-duration($animation-time)
@@ -737,6 +816,12 @@ textarea.input
 			+box-shadow(inset 0px 0px 0px 5px rgba(0, 0, 0, 0))
 			&:after
 				opacity: 1
+	&_shadow-color_main &__shadow
+		&:after
+			background: rgba($color_main_shadow, .7)
+
+	&__border
+		+box-shadow(inset 0px 0px 0px 5px $color_second)
 
 	&__img
 		display: block
@@ -765,6 +850,55 @@ textarea.input
 /* ---------------------------------------END--- */
 
 
+/* movie-link
+/* --------------------------------------------- */
+
+.movie-link
+	display: block
+	border-bottom: none
+	width: 200px
+	&__more
+		margin-top: 10px
+
+	&:hover &__more
+		background-color: lighten($color_second, 20)
+
+	&__img
+		display: block
+		z-index: -1
+		position: relative
+
+	&__shadow
+		+box-shadow(inset 0px 0px 0px 5px rgba(#000, .3))
+		display: block
+		border-bottom: none
+		position: relative
+		+transition-property(box-shadow)
+		+transition-duration($animation-time)
+		+transition-timing-function(ease-out)
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background: rgba(#fff, .2)
+			opacity: 0
+			+transition-property(opacity)
+			+transition-duration($animation-time)
+			+transition-timing-function(ease-out)
+
+	&:hover &__shadow
+		+box-shadow(inset 0px 0px 0px 5px rgba(#000, 0))
+		&:after
+			opacity: 1
+		
+/* movie-link
+/* ---------------------------------------END--- */
+
+
 /* movie-props
 /* --------------------------------------------- */
 
@@ -776,6 +910,9 @@ textarea.input
 		width: 100%
 		line-height: 1.3
 
+	&_item-space_more &__i
+		margin-bottom: 18px
+
 	&__label
 		display: table-cell
 		width: 90px
@@ -783,6 +920,14 @@ textarea.input
 
 	&__value
 		display: table-cell
+
+	&_props-inline &__i
+		display: block
+
+	&_props-inline &__label,
+	&_props-inline &__value
+		display: inline
+		width: auto
 
 /* movie-props
 /* ---------------------------------------END--- */
@@ -914,13 +1059,21 @@ textarea.input
 /* --------------------------------------------- */
 
 .movie-h
+	margin: 0
+	padding: 0
 	text-transform: uppercase
 	font-weight: bold
+	color: $color_text
 	+rem(font-size, 18px)
 	line-height: 1.3
 	margin-bottom: 10px
 	&_text-color_main
 		color: $color_main_txt
+	&_text-color_white
+		color: #fff
+	&_size_big
+		+rem(font-size, 20px)
+		margin-bottom: 24px
 
 /* movie-h
 /* ---------------------------------------END--- */
@@ -949,6 +1102,7 @@ textarea.input
 
 	&_small
 		width: 960px
+		margin-top: 80px
 
 	&__lst
 		margin: 0
@@ -1193,4 +1347,359 @@ textarea.input
 		text-align: right
 
 /* graph-links
+/* ---------------------------------------END--- */
+
+
+/* breadcrumbs
+/* --------------------------------------------- */
+
+.breadcrumbs
+	+rem(font-size, 12px)
+	margin-bottom: 20px
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0 0 5px 0
+		padding: 0
+		display: inline-block
+		&:after
+			content: '/'
+			display: inline-block
+			margin: 0 7px
+		&:last-child
+			&:after
+				display: none
+
+	&__a
+		display: inline-block
+		border-bottom: none
+
+	&__icon
+		display: inline-block
+		width: 10px
+		height: 10px
+		color: #9d9d9d
+		margin: 0 17px 0 20px
+
+
+/* breadcrumbs
+/* ---------------------------------------END--- */
+
+
+/* video
+/* --------------------------------------------- */
+
+.video
+	margin-bottom: $content_bot_space
+	&__body
+		position: relative
+		padding-bottom: 56.25% /* 16:9 */
+		padding-top: 25px
+		height: 0
+		margin-bottom: 10px
+		iframe
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+
+	&__legend
+		
+	&__title
+		font-weight: bold
+
+	&__details
+		
+
+/* video
+/* ---------------------------------------END--- */
+
+
+/* discount
+/* --------------------------------------------- */
+
+.discount
+	line-height: 1.2
+	color: $color_main_txt
+	margin-bottom: 35px
+
+	&__h
+		text-transform: uppercase
+		font-weight: bold
+		+rem(font-size, 14px)
+		text-align: center
+
+	&__legend
+		text-align: center
+		+rem(font-size, 12px)
+
+	&__separator
+		margin: 15px
+		border-bottom: 1px dashed #6e93b2
+
+	&__i
+		margin-bottom: 17px
+		position: relative
+		padding-left: 30px
+
+		&_legend
+			font-weight: bold
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: -4px
+			left: 0
+			width: 24px
+			height: 24px
+			background: #fff
+			border-radius: 50%
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 4px
+			width: 12px
+			height: 12px
+			background: #c0c0c0
+			border-radius: 50%
+			z-index: 1
+			border: 2px solid #e6e6e6
+		&_active
+			&:before
+				background: #96e300
+				border-color: #d5f498
+
+			
+
+	&__val
+		font-weight: bold
+		display: inline-block
+
+/* discount
+/* ---------------------------------------END--- */
+
+
+/* teasers
+/* --------------------------------------------- */
+
+.teasers
+	margin: 0 0 25px 0
+	padding: 0
+	list-style-type: none
+	color: $color_main_txt
+
+	&__i
+		margin: 25px 0 0 0
+		padding: 0
+		display: table
+		border-bottom: 1px dashed $color_main
+	
+	&__poster,
+	&__body
+		display: table-cell
+		vertical-align: top
+		padding-bottom: 25px
+
+	&__poster
+		padding-right: 30px
+
+	&__body
+
+
+	&__description
+		margin-bottom: 30px
+		
+
+/* teasers
+/* ---------------------------------------END--- */
+
+
+/* page-nav
+/* --------------------------------------------- */
+
+.page-nav
+	text-align: center
+	padding: 24px 0
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0 3px
+		padding: 0
+		display: inline-block
+
+		
+	&__a
+		display: inline-block
+		vertical-align: middle
+		padding: 0 16px
+		height: 40px
+		line-height: 40px
+		border: 1px solid transparent
+		color: #fff
+		background: #2270a1
+		+transition-property(background)
+		+transition-duration($animation-time)
+		+transition-timing-function(ease-out)
+		position: relative
+		border: none
+		@extend %font-sb
+		.is-active > &
+			background: none
+			color: $color_main_txt
+		&:hover
+			background: $color_second
+
+	
+	&__i_prev &__a,
+	&__i_next &__a
+		display: inline-block
+		vertical-align: middle
+		width: 40px
+		+box-sizing(border-box)
+		overflow: hidden
+		text-indent: -999px
+		background: $color_second
+		&:hover
+			background-color: lighten($color_second, 20)
+	
+	&__i_prev &__a
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			+sprite-icon("small-prev")
+			margin-left: - image-width( sprite-path("small-prev")) /2
+			margin-top: - image-height( sprite-path("small-prev")) /2
+
+	&__i_next &__a
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			+sprite-icon("small-next")
+			margin-left: - image-width( sprite-path("small-next")) /2
+			margin-top: - image-height( sprite-path("small-next")) /2
+			
+	
+
+/* page-nav
+/* ---------------------------------------END--- */
+
+
+/* tabs
+/* --------------------------------------------- */
+
+.tabs
+	width: 100%
+	overflow: hidden
+	padding: 1px
+	position: relative
+	margin: 0 0 45px 0
+	padding: 0
+	&__h
+		float: left
+		background: $color_main_light
+		position: relative
+		cursor: pointer
+		font-size: 12px
+		text-transform: uppercase
+		height: 70px
+		padding: 0 29px
+		line-height: 1.1
+		padding-top: 7px
+		margin-right: image-width( sprite-path("tab_right"))
+		+box-sizing(border-box)
+		border-top: 3px solid #000
+		border-bottom: 3px solid #000
+		color: #fff
+		text-transform: uppercase
+		&.is-active
+			color: $color_main_light !important
+		&_soon
+			color: #000
+		&_first
+			margin-left: image-width( sprite-path("tab_left"))
+
+		&:after,
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: -3px
+		&:before
+			left: - image-width( sprite-path("tab_left"))
+			+sprite-icon("tab_left")
+
+		&:after
+			right: - image-width( sprite-path("tab_right"))
+			+sprite-icon("tab_right")
+
+		&_soon
+			background: $color_second
+			&:before
+				+sprite-icon("tab_left_soon")
+			&:after
+				+sprite-icon("tab_right_soon")
+		
+		&.is-active
+			background: #e7ecf1
+			z-index: 3
+			cursor: auto
+			color: #fff
+			text-shadow: none
+			&:before
+				+sprite-icon("tab_left_active")
+			&:after
+				+sprite-icon("tab_right_active")
+	
+	.tabs__boby
+		//display: none
+		visibility: hidden
+		opacity: 0
+		float: right
+		width: 100%
+		margin: 70px 0 0 -100%
+		position: relative
+		z-index: 2
+		+transition-property(opacity, visibility)
+		+transition-duration($animation-time_slow)
+		+transition-timing-function(ease-out)
+	
+		&.is-active
+			//display: block
+			visibility: visible
+			opacity: 1
+	
+	&__content
+		padding-top: 35px
+
+	&__title
+		+rem(font-size, 30px)
+		@extend %font-exbold
+		
+	&__legend
+		font-weight: bold
+		+rem(font-size, 10px)
+		text-align: center
+
+	
+
+
+
+/* tabs
 /* ---------------------------------------END--- */

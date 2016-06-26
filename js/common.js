@@ -79,6 +79,7 @@ $(function() {
 
 
 	setEqualHeight();
+	animateTabs();
 
 });
 
@@ -86,15 +87,36 @@ $(function() {
 
 function setEqualHeight() {
 
+	console.log('height');
+
 	var container = '.js-equal-height__container';
 	var items = '.js-equal-height__item';
 
 		$(container).each(function() {
 		
-		$(this).find(items).equalHeights();
+		$(this).find(items).css({height: 'auto'}).equalHeights();
 
 	});
 
 
 } // setEqualHeight
 
+function animateTabs() {
+
+	var activeState = 'is-active';
+
+	$(document).on('click', '.js-tabs dt', function() {
+
+		$(this)
+			.siblings()
+			.removeClass(activeState)
+			.end()
+			.next('dd')
+			.andSelf()
+			.addClass(activeState);
+	});
+
+	setInterval( function() { setEqualHeight(); } , 0);
+
+	
+} // animateTabs()
