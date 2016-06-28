@@ -23,12 +23,6 @@
         return $this.css('height', maxHeight);
     };
 
-    // auto-initialize plugin
-    $('[data-equal]').each(function(){
-        var $this = $(this),
-            target = $this.data('equal');
-        $this.find(target).equalHeights();
-    });
 
 })(jQuery);
 
@@ -87,10 +81,10 @@ $(function() {
 
 function setEqualHeight() {
 
-	console.log('height');
-
 	var container = '.js-equal-height__container';
 	var items = '.js-equal-height__item';
+	var infTeasersH = '.inf-teasers__h';
+	var infTeasersTxt = '.inf-teasers__txt';
 
 		$(container).each(function() {
 		
@@ -98,6 +92,7 @@ function setEqualHeight() {
 
 	});
 
+	setTimeout(function() { $(infTeasersH).equalHeights(); }, 0);
 
 } // setEqualHeight
 
