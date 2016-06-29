@@ -2062,9 +2062,6 @@ textarea.input {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.slider__body:hover .slider__message-h {
-  color: #fff;
-}
 .slider__message-h {
   text-transform: uppercase;
   font-weight: bold;
@@ -2073,18 +2070,6 @@ textarea.input {
   font-size: 2.8rem;
   text-shadow: 0 0 5px #000;
   margin-bottom: 10px;
-  -moz-transition-property: color;
-  -o-transition-property: color;
-  -webkit-transition-property: color;
-  transition-property: color;
-  -moz-transition-duration: 0.4s;
-  -o-transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  -moz-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
 }
 .slider__message-legend {
   color: #fff;
