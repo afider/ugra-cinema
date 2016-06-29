@@ -2007,6 +2007,7 @@ textarea.input {
   display: block;
 }
 .slider__body {
+  display: block;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -2014,17 +2015,55 @@ textarea.input {
   left: 0;
   margin: auto;
   z-index: 2;
+  border-bottom: none;
+}
+.slider__schedule {
+  z-index: 100;
 }
 .slider__img {
   display: block;
   max-width: 100%;
   height: auto;
 }
+.slider__body:hover .slider__message:before {
+  opacity: 0.6;
+}
 .slider__message {
   position: absolute;
   bottom: 60px;
   left: 130px;
   line-height: 1.1;
+  padding: 20px;
+}
+.slider__message:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #000;
+  z-index: -1;
+  opacity: 0;
+  -moz-box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.3);
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-duration: 0.9s;
+  -o-transition-duration: 0.9s;
+  -webkit-transition-duration: 0.9s;
+  transition-duration: 0.9s;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.slider__body:hover .slider__message-h {
+  color: #fff;
 }
 .slider__message-h {
   text-transform: uppercase;
@@ -2034,6 +2073,18 @@ textarea.input {
   font-size: 2.8rem;
   text-shadow: 0 0 5px #000;
   margin-bottom: 10px;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
 .slider__message-legend {
   color: #fff;

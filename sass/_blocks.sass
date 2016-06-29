@@ -1177,6 +1177,7 @@ textarea.input
 			
 
 	&__body
+		display: block
 		position: absolute
 		top: 0
 		bottom: 0
@@ -1184,17 +1185,45 @@ textarea.input
 		left: 0
 		margin: auto
 		z-index: 2
+		border-bottom: none
+
+	&__schedule
+		z-index: 100
 
 	&__img
 		display: block
 		max-width: 100%
 		height: auto
+	
+
+	&__body:hover &__message
+		&:before
+			opacity: 0.6
 
 	&__message
 		position: absolute
 		bottom: 60px
 		left: 130px
 		line-height: 1.1
+		padding: 20px
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			background: #000
+			z-index: -1
+			opacity: 0
+			+box-shadow(0px 0px 0px 5px rgba(#fff, .3))
+			+transition-property(opacity)
+			+transition-duration($animation-time_slow)
+			+transition-timing-function(ease-out)
+		
+	&__body:hover &__message-h
+		color: #fff
 
 	&__message-h
 		text-transform: uppercase
@@ -1203,6 +1232,10 @@ textarea.input
 		+rem(font-size, 28px)
 		text-shadow: 0 0 5px #000
 		margin-bottom: 10px
+		+transition-property(color)
+		+transition-duration($animation-time)
+		+transition-timing-function(ease-out)
+		
 
 	&__message-legend
 		color: #fff
