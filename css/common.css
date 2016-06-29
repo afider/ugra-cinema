@@ -1151,10 +1151,27 @@ input:-ms-input-placeholder {
   margin: 0;
   padding: 0;
   text-align: center;
+  position: relative;
 }
 .main-nav__i.is-active .main-nav__a {
   background: #87cefa;
   color: #0d2238;
+}
+.main-nav__i_parent .main-nav__a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 1px;
+  margin-top: -2px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  border-color: #fff transparent transparent transparent;
+}
+.main-nav__i_parent .main-nav__a:hover:after {
+  border-color: #ffce00 transparent transparent transparent;
 }
 .main-nav__a {
   color: #fff;
@@ -1176,6 +1193,62 @@ input:-ms-input-placeholder {
   border-color: rgba(255, 255, 255, 0.3);
 }
 .main-nav__a:hover {
+  color: #ffce00;
+  border-color: #ffeb99;
+  border-color: rgba(255, 206, 0, 0.3);
+}
+.main-nav__i:hover .main-nav__sub {
+  visibility: visible;
+  opacity: 1;
+}
+.main-nav__sub {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background: red;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 180px;
+  z-index: 101;
+  background: #0d2238;
+  text-align: left;
+  font-size: 13px;
+  font-size: 1.3rem;
+  visibility: hidden;
+  opacity: 0;
+  -moz-transition-property: opacity, visibility;
+  -o-transition-property: opacity, visibility;
+  -webkit-transition-property: opacity, visibility;
+  transition-property: opacity, visibility;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.main-nav__sub-i {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.main-nav__sub-a {
+  display: block;
+  padding: 8px 16px;
+  color: #fff;
+  border-color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+  border-bottom: none;
+}
+.main-nav__sub-a:visited {
+  color: #fff;
+  border-color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.main-nav__sub-a:hover {
   color: #ffce00;
   border-color: #ffeb99;
   border-color: rgba(255, 206, 0, 0.3);
