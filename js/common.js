@@ -74,6 +74,7 @@ $(function() {
 
 	setEqualHeight();
 	animateTabs();
+	customizeSelect();
 
 });
 
@@ -115,3 +116,12 @@ function animateTabs() {
 
 	
 } // animateTabs()
+
+
+function customizeSelect() {
+
+	$(".js-custom-select").select2({
+		width: 'copy'
+	});
+
+} // customizeSelect ()

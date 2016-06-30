@@ -2053,3 +2053,87 @@ textarea.input
 
 /* important
 /* ---------------------------------------END--- */
+
+
+/* columns
+/* --------------------------------------------- */
+
+.columns
+	margin-left: -25px
+	margin-right: -25px
+
+	&__body
+		display: table
+		width: 100%
+	&__i
+		display: table-cell
+		vertical-align: top
+		padding: 0 25px
+		
+
+/* columns
+/* ---------------------------------------END--- */
+
+
+/* movies-catalog
+/* --------------------------------------------- */
+
+.movies-catalog
+	margin-bottom: 40px
+	&__header
+		display: table
+		width: 100%
+		margin-bottom: 20px
+
+	&__list
+		display: table-cell
+		vertical-align: top
+
+	&__info
+		display: table-cell
+		vertical-align: top
+		text-align: right
+		+rem(font-size, 16px)
+		color: $color_main_light
+
+	&__body
+		position: relative
+		padding: 30px
+
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			right: 0
+			left: 0
+			bottom: 0
+			background: #fff
+			opacity: .5
+
+	&__photos
+		position: relative
+		z-index: 1
+		margin: 0
+		padding: 0
+		list-style-type: none
+		@extend %clear
+		display: block
+		margin: -6px
+		
+	&__photos-i
+		float: left
+		display: block
+		margin: 6px
+		padding: 0
+
+	&__img
+		display: block
+
+	&__length
+		display: inline-block
+		padding-left: 54px
+		
+
+/* movies-catalog
+/* ---------------------------------------END--- */

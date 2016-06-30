@@ -5,9 +5,14 @@
 		<title>Югорский КиноПрокат</title>
 		<link rel="shortcut icon" href="img/favicon.ico">
 		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/select2.css">
+		<link rel="stylesheet" href="css/jquery-ui-1.9.1.custom.css">
 		<script src="js/svg.js"></script>
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/jquery.bxslider.min.js"></script>
+		<script src="js/jquery-ui-1.9.1.custom.min.js"></script>
+		<script src="js/select2.min.js"></script>
+		<script src="js/select2_locale_ru.js"></script>
 		<script src="js/common.js"></script>
 	</head>
 
@@ -108,16 +113,76 @@
 				<p class="important">Вам хочется ярких и незабываемых впечатлений?</p>
 
 				<p>Для любителей острых ощущений и киноманов в Киноцентре открыт 5D кинотеатр. Вместе с героями короткометражных фильмов Вы сможете летать в космосе, погружаться в морские глубины, падать в бездонные пропасти, спасаться от летучих мышей в темных сырых пещерах… Окунитесь в новый мир!</p>
-
-				Мы ждем Вас ежедневно с 10:00 до 23:00, без перерывов
-				и выходных, КИНОЦЕНТР (Югорский кинопрокат)
-				г. Ханты-Мансийск ул. Лопарева 4 — 1 этаж.
-
+				
+				<div class="columns">
+					<div class="columns__i">
+						Мы ждем Вас ежедневно с 10:00 до 23:00, без перерывов
+						и выходных, КИНОЦЕНТР (Югорский кинопрокат)
+						г. Ханты-Мансийск ул. Лопарева 4 — 1 этаж.
+					</div>
+					<div class="columns__i">
+						Стоимость билетов:  – 150 руб
+						Все подробности вы можете узнать по телефону +7 (3467) 32-14-22
+					</div>
+				</div>
 				
 				<div class="separator"></div>
 
 
 				<h1 class="txt-to-center h h_color_main">Мы предлагаем широкий ассортимент фильмов</h1>
+
+				
+				<div class="movies-catalog">
+					<div class="movies-catalog__header">
+						<div class="movies-catalog__list">
+							<select id="5d-movies" name="5d-movies" class="js-custom-select"  style="width: 430px;">
+								<option value="1">Приключения маленького динозаврика</option>
+								<option value="2">Мир динозавров</option>
+								<option value="3">Дом с привидениями</option>
+								<option value="4">Роботехника</option>
+								<option value="5">Горки в тропиках</option>
+								<option value="6">Горки в тропиках-2</option>
+								<option value="7">Горки в тропиках-3</option>
+								<option value="8">Полицейская погоня</option>
+								<option value="9">Приключения Шрека</option>
+								<option value="10">Максимальное ускорение</option>
+							</select>
+						</div>
+						<div class="movies-catalog__info">
+							54 из 60 <span class="movies-catalog__time">Длительность - 7:56</span>
+						</div>
+					</div>
+					<div class="movies-catalog__body">
+						<ul class="movies-catalog__photos">
+							<li class="movies-catalog__photos-i">
+								<img src="img/content/5d/5d-1.jpg" height="159" width="216" alt="" class="movies-catalog__img">
+							</li>
+							<li class="movies-catalog__photos-i">
+								<img src="img/content/5d/5d-2.jpg" height="159" width="216" alt="" class="movies-catalog__img">
+							</li>
+							<li class="movies-catalog__photos-i">
+								<img src="img/content/5d/5d-3.jpg" height="159" width="216" alt="" class="movies-catalog__img">
+							</li>
+							<li class="movies-catalog__photos-i">
+								<img src="img/content/5d/5d-4.jpg" height="159" width="216" alt="" class="movies-catalog__img">
+							</li>
+							<li class="movies-catalog__photos-i">
+								<img src="img/content/5d/5d-5.jpg" height="159" width="216" alt="" class="movies-catalog__img">
+							</li>
+							<li class="movies-catalog__photos-i">
+								<img src="img/content/5d/5d-6.jpg" height="159" width="216" alt="" class="movies-catalog__img">
+							</li>
+							<li class="movies-catalog__photos-i">
+								<img src="img/content/5d/5d-7.jpg" height="159" width="216" alt="" class="movies-catalog__img">
+							</li>
+							<li class="movies-catalog__photos-i">
+								<img src="img/content/5d/5d-8.jpg" height="159" width="216" alt="" class="movies-catalog__img">
+							</li>
+
+						</ul>
+					</div>
+				</div>
+				
 				
 
 				<p><b>5D КИНО – это аттракцион нового поколения, который дарит нам ощущение полной достоверности происходящего.</b></p>
