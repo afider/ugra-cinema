@@ -2744,29 +2744,15 @@ textarea.input {
   height: 70px;
 }
 .tabs .tabs__boby {
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   float: right;
   width: 100%;
   margin: 70px 0 0 -100%;
   position: relative;
   z-index: 2;
-  -moz-transition-property: opacity, visibility;
-  -o-transition-property: opacity, visibility;
-  -webkit-transition-property: opacity, visibility;
-  transition-property: opacity, visibility;
-  -moz-transition-duration: 0.9s;
-  -o-transition-duration: 0.9s;
-  -webkit-transition-duration: 0.9s;
-  transition-duration: 0.9s;
-  -moz-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
 }
 .tabs .tabs__boby.is-active {
-  visibility: visible;
-  opacity: 1;
+  display: block;
 }
 .tabs__content {
   padding-top: 35px;
